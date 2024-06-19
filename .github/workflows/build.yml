@@ -25,11 +25,12 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-      - name: customer-product-service
-        run: cd customer-product-service/
       - name: Maven compile
+        working-directory: customer-product-service
         run: mvn compile
       - name: Maven Unit Test
+        working-directory: customer-product-service
         run: mvn test -Dgroups=unit
       - name: Maven Integration Test
+        working-directory: customer-product-service
         run: mvn test -Dgroups=integration
