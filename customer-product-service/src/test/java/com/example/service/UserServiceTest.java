@@ -1,5 +1,6 @@
 package com.example.service;
 
+import com.example.commons.integratiom.test.IntegrationTest;
 import com.example.dao.UserDAO;
 import com.example.factory.UserFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;

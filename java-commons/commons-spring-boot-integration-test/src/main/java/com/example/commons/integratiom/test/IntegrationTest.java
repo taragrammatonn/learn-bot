@@ -1,4 +1,4 @@
-package com.example.service;
+package com.example.commons.integratiom.test;
 
 import org.junit.jupiter.api.Tag;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
