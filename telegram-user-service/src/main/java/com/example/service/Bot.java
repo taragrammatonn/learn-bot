@@ -1,13 +1,19 @@
 package com.example.service;
 
+import com.example.message.handler.MessageHandler;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.longpolling.interfaces.LongPollingUpdateConsumer;
 import org.telegram.telegrambots.longpolling.starter.SpringLongPollingBot;
 import org.telegram.telegrambots.longpolling.util.LongPollingSingleThreadUpdateConsumer;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Component
 public class Bot implements SpringLongPollingBot, LongPollingSingleThreadUpdateConsumer {
+
+    Map<String, MessageHandler> commandHandlers = new HashMap<>();
 
     @Override
     public String getBotToken() {
@@ -21,10 +27,10 @@ public class Bot implements SpringLongPollingBot, LongPollingSingleThreadUpdateC
 
     @Override
     public void consume(Update update) {
-        String messageText = update.getMessage().getText();
+        commandHandlers.get(update.getMessage().getText()).generateMessage(update);
+    }
 
-        if ("/start".equals(messageText)) {
-            System.out.println("Hello!");
-        }
+    public void addCommandHandler(String command, MessageHandler handler) {
+        commandHandlers.put(command, handler);
     }
 }
