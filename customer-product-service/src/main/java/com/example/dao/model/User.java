@@ -5,8 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-import java.util.UUID;
-
 @Entity(name = "User")
 @Table(schema = "users", name = "User")
 public class User {
@@ -34,6 +32,30 @@ public class User {
 
     public User() {
 
+    }
+
+    public User(User user) {
+        this.id = user.id;
+        this.fName = user.fName;
+        this.lName = user.lName;
+    }
+
+    public User withId(Long id) {
+        this.id = id;
+        return this;
+    }
+
+    public User withFname(String fName) {
+        this.fName = fName;
+        return this;
+    }
+    public User withLname(String lName) {
+        this.lName = lName;
+        return this;
+    }
+
+    public User build() {
+        return new User(this);
     }
 
     public User updateUser(User newUser, User oldUser) {
