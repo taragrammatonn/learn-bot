@@ -1,5 +1,6 @@
 package com.example.service;
 
+import com.example.commons.unit.test.UnitTest;
 import com.example.dao.UserDAO;
 import com.example.dao.model.User;
 import com.example.factory.UserFactory;
