@@ -1,0 +1,23 @@
+server:
+  shutdown: graceful
+  port: 8080
+
+spring:
+  cloud:
+    config:
+      import-check:
+        enabled: false
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: customer-product-service
+          uri: http://localhost:8888/
+          predicates:
+            - Path=/api/user/**
+          filters:
+            - RewritePath=/api/user/(?<path>.*), /$\{path}
+  output:
+    ansi:
+      enabled: always
