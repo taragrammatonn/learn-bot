@@ -11,7 +11,7 @@ public class Bot implements SpringLongPollingBot, LongPollingSingleThreadUpdateC
 
     @Override
     public String getBotToken() {
-        return "";
+        return "7154597435:AAGAK1knRKbus2_0J0uetBT5Jo9kR-D1BY0";
     }
 
     @Override
@@ -21,12 +21,10 @@ public class Bot implements SpringLongPollingBot, LongPollingSingleThreadUpdateC
 
     @Override
     public void consume(Update update) {
+        String messageText = update.getMessage().getText();
 
-        String s1 = """
-                /start
-                /balances
-                /audio
-                """;
-
+        if ("/start".equals(messageText)) {
+            System.out.println("Hello!");
+        }
     }
 }
