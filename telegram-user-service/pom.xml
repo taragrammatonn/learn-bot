@@ -33,6 +33,13 @@
             <artifactId>telegrambots-client</artifactId>
             <version>${telegrambots-springboot-longpolling-starter.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.4.12</version>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
 </project>
