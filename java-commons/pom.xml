@@ -13,6 +13,7 @@
     <modules>
         <module>commons-spring-boot-integration-test</module>
         <module>commons-dependencies</module>
+        <module>commons-spring-boot-unit-test</module>
     </modules>
 
     <properties>
