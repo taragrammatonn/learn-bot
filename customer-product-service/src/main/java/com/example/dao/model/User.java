@@ -1,11 +1,13 @@
 package com.example.dao.model;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.List;
 
-@Entity(name = "User")
-@Table(schema = "users", name = "User")
+@Builder
+@Entity(name = "user")
+@Table(name = "user")
 public class User {
 
     @Id
