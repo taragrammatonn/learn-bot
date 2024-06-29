@@ -4,11 +4,13 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.*;
 
 import java.util.UUID;
 
-@Entity(name = "User")
-@Table(schema = "users", name = "User")
+@Builder
+@Entity(name = "user")
+@Table(name = "user")
 public class User {
 
     @Id

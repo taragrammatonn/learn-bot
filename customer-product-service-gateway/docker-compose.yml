@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+  customer-product-gateway:
+    volumes:
+      - app:/opt/app
+    depends_on:
+      - postgres
+    image: customer-product-gateway
+    ports:
+      - "8080:8080"
+volumes:
+  app:
+    external: true
+networks:
+  postgres:
+    driver: bridge
