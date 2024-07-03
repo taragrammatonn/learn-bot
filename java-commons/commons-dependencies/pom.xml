@@ -24,6 +24,11 @@
                 <artifactId>commons-spring-boot-integration-test</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.example</groupId>
+                <artifactId>commons-spring-boot-unit-test</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
