@@ -2,12 +2,15 @@ package com.example.service;
 
 import com.example.commons.unit.test.UnitTest;
 import com.example.dao.UserDAO;
+import com.example.dao.model.Transaction;
 import com.example.dao.model.User;
+import com.example.factory.TransactionFactory;
 import com.example.factory.UserFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -88,5 +91,16 @@ class UserServiceUnitTest {
         boolean deleteById = telegramUserService.deleteById(user.getId());
 
         assertThat(deleteById).isFalse();
+    }
+
+    @Test
+    void shouldReturnTransactionByUser() {
+
+        User testUser = UserFactory.aUserWithId();
+        Transaction testTransaction = TransactionFactory.aTransactionWithId();
+
+        testUser.setTransaction(List.of(testTransaction));
+
+        assertThat(testUser.getTransaction()).isEqualTo(List.of(testTransaction));
     }
 }
