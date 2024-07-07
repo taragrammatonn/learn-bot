@@ -14,10 +14,10 @@ public class User {
     private Long id;
 
     @Column(name = "f_name")
-    String fName;
+    private String fName;
 
     @Column(name = "l_name")
-    String lName;
+    private String lName;
 
     public User(Long id, String fName, String lName) {
         this.id = id;
