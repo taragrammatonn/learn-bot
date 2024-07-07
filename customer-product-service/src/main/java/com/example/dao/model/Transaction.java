@@ -37,8 +37,9 @@ public class Transaction {
 
     public Transaction() {}
 
-    public Transaction(LocalDateTime occuredAt, LocalDateTime clearedDate, LocalDateTime authorizationDate,
+    public Transaction(Long id, LocalDateTime occuredAt, LocalDateTime clearedDate, LocalDateTime authorizationDate,
                        BigDecimal transactionAmount, BigDecimal balanceBefore, BigDecimal balanceAfter) {
+        this.id = id;
         this.occuredAt = occuredAt;
         this.clearedDate = clearedDate;
         this.authorizationDate = authorizationDate;
