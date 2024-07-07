@@ -25,7 +25,10 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-      - name: Maven compile
+      - name: Maven commons build
+        working-directory: java-commons
+        run: mvn install
+      - name: Maven customer-product-service build
         working-directory: customer-product-service
         run: mvn compile
       - name: Maven Unit Test
