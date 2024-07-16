@@ -1,0 +1,17 @@
+server:
+  port: 8082
+
+bot:
+  name: bot-name
+  token: bot-token
+
+spring:
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            dismiss404: true
+          customerProductClient:
+            base-url: http://localhost:8083/api
+            logger-level: full
