@@ -23,6 +23,13 @@ public class User {
     @OneToMany(mappedBy = "transaction")
     private List<Transaction> transaction;
 
+    public User(Long id, String fName, String lName, List<Transaction> transaction) {
+        this.id = id;
+        this.fName = fName;
+        this.lName = lName;
+        this.transaction = transaction;
+    }
+
     public User(Long id, String fName, String lName) {
         this.id = id;
         this.fName = fName;
