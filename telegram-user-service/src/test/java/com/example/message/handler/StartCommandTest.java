@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @AutoConfigureWireMock(port = 0, stubs = "classpath:/wiremock/stubs", files = "classpath:/wiremock")
 class StartCommandTest {
 
-    @Value("${wiremock.server.port")
+    @Value("${wiremock.server.port}")
     String port;
 
     @Autowired
@@ -32,6 +32,23 @@ class StartCommandTest {
 
         String s = messageHandler.generateMessage(update);
         assertThat(s).isNotBlank().isEqualTo("{\"connection\":true}");
+
+    }
+
+    @Test
+    void saveNewUser() {
+
+        var update = new Update();
+        var message = new Message();
+
+        message.setText("/start");
+        message.setChat(new Chat(1L, "", "test_chat", "Jon", "Snow", " bastard", false));
+        update.setMessage(message);
+
+
+        String response = messageHandler.generateMessage(update);
+
+        assertThat(response).isNotEmpty().isEqualTo("Hello World!");
 
     }
 }
