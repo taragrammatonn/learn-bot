@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>com.example</groupId>
-    <artifactId>telegram-learn-bot</artifactId>
+    <artifactId>customer-product-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>telegram-learn-bot</name>
     <description>Telegram Learn Bot</description>
