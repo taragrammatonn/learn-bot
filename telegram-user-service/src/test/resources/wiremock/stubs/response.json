@@ -8,7 +8,10 @@
   "response": {
     "status": 200,
     "jsonBody": {
-      "connection": true
+      "id": 1,
+      "userName": "witcher",
+      "fName": "Geralt",
+      "lName": "of Rivia"
     }
   }
 }
