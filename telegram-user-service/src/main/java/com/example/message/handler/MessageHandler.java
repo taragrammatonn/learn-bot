@@ -2,9 +2,7 @@ package com.example.message.handler;
 
 import com.example.service.Bot;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import org.telegram.telegrambots.meta.api.objects.User;
 
 public interface MessageHandler {
 
@@ -16,5 +14,4 @@ public interface MessageHandler {
     default void initCommand(Bot bot) {
         bot.addCommandHandler(command(), this);
     }
-
 }

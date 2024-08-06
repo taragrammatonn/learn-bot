@@ -31,6 +31,12 @@ jobs:
       - name: Maven customer-product-service build
         working-directory: customer-product-service
         run: mvn compile
+      - name: Maven telegram-user-service build
+        working-directory: telegram-user-service
+        run: mvn compile
+      - name: Maven customer-product-service-gateway build
+        working-directory: customer-product-service-gateway
+        run: mvn compile
       - name: Maven Unit Test
         working-directory: customer-product-service
         run: mvn test -Dgroups=unit
